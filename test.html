@@ -1,0 +1,30 @@
+<script>
+    // const update = (dt) => {
+    //     console.log(dt)
+
+    // }
+
+    // let lastUpdate = Date.now() // the ms right now
+
+    // setInterval(() => {
+    //     const now = Date.now()
+    //     const dt = now - lastUpdate
+    //     lastUpdate = now
+    //     update(dt)
+    // }, 20)
+
+    var start = null;
+    let lastTime = 0
+    function step(timestamp) {
+        if (!start) start = timestamp;
+        var progress = timestamp - start;
+        // let dt = timestamp - lastTime
+        // lastTime = timestamp
+        console.log(progress)
+        // game runs for 1 minute
+        if (progress < 60000) window.requestAnimationFrame(step);
+
+    }
+    window.requestAnimationFrame(step);
+
+</script>
